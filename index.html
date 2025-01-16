@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miri - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --card-dark: #141414;
+            --text-dark: #e0e0e0;
+            --accent-dark: #b4a0ff;
+            --bg-light: #f0f0f0;
+            --card-light: #ffffff;
+            --text-light: #1a1a1a;
+            --accent-light: #7c4dff;
+        }
+
+        * {
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .dark {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .light {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .card-dark {
+            background-color: var(--card-dark);
+        }
+
+        .card-light {
+            background-color: var(--card-light);
+        }
+
+        .gradient-text-dark {
+            background: linear-gradient(45deg, #c8b3ff, #b4a0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-text-light {
+            background: linear-gradient(45deg, #7c4dff, #6200ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .card {
+            border-radius: 24px;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            will-change: transform, box-shadow;
+        }
+
+        .card:hover {
+            transform: translate3d(0, -6px, 0);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        .card i {
+            transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .card:hover i {
+            transform: scale(1.1);
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 50;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .theme-switch:hover {
+            transform: translate3d(0, -2px, 0) scale(1.05);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -10px, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(180, 160, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="dark transition-all duration-300">
+    <div class="fixed inset-0 bg-gradient-to-br from-transparent to-purple-900/10 pointer-events-none"></div>
+    
+    <button onclick="toggleTheme()" class="theme-switch p-4 rounded-full card card-dark hover:scale-110 transition-all duration-200 hover:rotate-12">
+        <i class="fas fa-moon text-xl"></i>
+    </button>
+
+    <header class="min-h-screen flex flex-col justify-center px-6 sm:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto w-full">
+            <h1 class="text-6xl sm:text-7xl font-bold mb-6 gradient-text-dark floating">Miri</h1>
+            <p class="text-2xl sm:text-3xl mb-8 opacity-90 transform transition-transform duration-200 hover:translate-x-2">Full Stack Developer</p>
+            <a href="https://status.oncemiri.net" class="inline-flex items-center gap-2 bg-[#b4a0ff] dark:text-black font-medium px-8 py-4 rounded-2xl hover:opacity-90 transition-all duration-200 hover-glow hover:scale-105 transform">
+                <i class="fas fa-server"></i>
+                Service Status
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section class="space-y-6 transform transition-all duration-300 hover:translate-x-2">
+                <h2 class="text-3xl font-bold mb-6 gradient-text-dark">Links</h2>
+                <div class="space-y-4">
+                    <a href="https://discord.com/users/1266530258522345574" class="card card-dark flex items-center gap-4 p-6 hover:bg-opacity-90 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fab fa-discord text-2xl"></i>
+                        Discord Profile
+                    </a>
+                    <a href="https://discord.gg/ggmZNqafKr" class="card card-dark flex items-center gap-4 p-6 hover:bg-opacity-90 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fas fa-users text-2xl"></i>
+                        Discord Server
+                    </a>
+                    <a href="https://youtube.com/@oncemiri" class="card card-dark flex items-center gap-4 p-6 hover:bg-opacity-90 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fab fa-youtube text-2xl"></i>
+                        YouTube Channel
+                    </a>
+                </div>
+            </section>
+
+            <section class="space-y-6 transform transition-all duration-300 hover:translate-x-2">
+                <h2 class="text-3xl font-bold mb-6 gradient-text-dark">Frontends</h2>
+                <div class="space-y-4">
+                    <a href="https://piped.oncemiri.net" class="card card-dark flex items-center gap-4 p-6 hover:bg-opacity-90 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fas fa-play text-2xl"></i>
+                        <div>
+                            <span class="font-medium text-xl">Piped</span>
+                            <p class="text-sm opacity-75">Alternative YouTube Frontend</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="space-y-6 md:col-span-2 transform transition-all duration-300 hover:translate-y-2">
+                <h2 class="text-3xl font-bold mb-6 gradient-text-dark">Projects</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <a href="https://dis.oncemiri.net" class="card card-dark p-8 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fas fa-image text-3xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Dis</h3>
+                        <p class="opacity-75">Discord banner/PFP grabber web API</p>
+                    </a>
+                    <div class="card card-dark p-8 transform hover:scale-[1.02] transition-all duration-200">
+                        <i class="fas fa-robot text-3xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Falcon</h3>
+                        <p class="opacity-75">Multipurpose Discord bot</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const cursor = document.createElement('div');
+        cursor.className = 'fixed w-4 h-4 rounded-full pointer-events-none transition-all duration-75 ease-out hidden md:block';
+        cursor.style.background = 'rgba(180, 160, 255, 0.5)';
+        cursor.style.transform = 'translate(-50%, -50%)';
+        cursor.style.zIndex = '9999';
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%, -50%) scale(2)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeButton = document.querySelector('.theme-switch i');
+            const cards = document.querySelectorAll('.card');
+            const gradientTexts = document.querySelectorAll('h1, h2');
+
+            requestAnimationFrame(() => {
+                if (body.classList.contains('dark')) {
+                    body.classList.remove('dark');
+                    body.classList.add('light');
+                    themeButton.classList.remove('fa-moon');
+                    themeButton.classList.add('fa-sun');
+                    cards.forEach(card => {
+                        card.classList.remove('card-dark');
+                        card.classList.add('card-light');
+                    });
+                    gradientTexts.forEach(text => {
+                        text.classList.remove('gradient-text-dark');
+                        text.classList.add('gradient-text-light');
+                    });
+                } else {
+                    body.classList.remove('light');
+                    body.classList.add('dark');
+                    themeButton.classList.remove('fa-sun');
+                    themeButton.classList.add('fa-moon');
+                    cards.forEach(card => {
+                        card.classList.remove('card-light');
+                        card.classList.add('card-dark');
+                    });
+                    gradientTexts.forEach(text => {
+                        text.classList.remove('gradient-text-light');
+                        text.classList.add('gradient-text-dark');
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
