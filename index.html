@@ -16,13 +16,13 @@
   <body class="text-ap-text overflow-x-hidden">
     <nav class="fixed top-4 left-1/2 -translate-x-1/2 gl z-40 w-[95%] max-w-4xl nav-standalone">
       <div class="px-6 py-4 flex justify-between items-center">
-        <a href="#top" class="text-xl font-semibold hover:text-ap-accent transition-all duration-300">miri</a>
+        <a href="#top" class="text-xl font-semibold hover:text-ap-accent transition-all duration-300" id="nav-name">oncemiri</a>
         <div class="space-x-4"><a href="#projects" class="bt px-4 py-2 text-sm">Projects</a><a href="#links" class="bt px-4 py-2 text-sm">Links</a></div>
       </div>
     </nav>
     <header id="top" class="pt-32 min-h-screen flex flex-col justify-center px-6">
       <div class="max-w-4xl mx-auto w-full">
-        <h1 class="text-6xl sm:text-8xl font-bold mb-4 tracking-tight">Miri</h1>
+        <h1 class="text-6xl sm:text-8xl font-bold mb-4 tracking-tight" id="main-name">Miri</h1>
         <p class="text-2xl sm:text-3xl mb-8 text-ap-secondary font-light">Full Stack Developer</p>
         <a href="https://status.oncemiri.net" class="inline-flex items-center gap-2 bg-ap-accent text-black font-medium px-6 py-3 rounded-full transition-all hover:brightness-110"><i class="fas fa-server"></i>Service Status</a>
       </div>
@@ -70,10 +70,10 @@
       </section>
     </main>
     <footer class="py-12 px-6 text-center text-ap-secondary">
-      <p>
-        © 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net
-      </p>
+      <p>© 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net</p>
     </footer>
-    <script>const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)})</script>
+    <script>
+    const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)});const mainName=document.getElementById("main-name");let hue=0;function updateMainNameGradient(){const e=`hsl(${hue},100%,70%)`,t=`hsl(${(hue+60)%360},100%,70%)`,n=`hsl(${(hue+120)%360},100%,70%)`;mainName.style.background=`linear-gradient(to right, ${e}, ${t}, ${n})`,mainName.style.webkitBackgroundClip="text",mainName.style.backgroundClip="text",mainName.style.color="transparent",hue=(hue+1)%360}setInterval(updateMainNameGradient,50);const navName=document.getElementById("nav-name");navName.style.background="linear-gradient(135deg, #6366f1, #2563eb)",navName.style.webkitBackgroundClip="text",navName.style.backgroundClip="text",navName.style.color="transparent"
+    </script>
   </body>
 </html>
