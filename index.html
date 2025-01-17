@@ -10,20 +10,186 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>tailwind.config={theme:{extend:{colors:{ap:{bg:"#000000",card:"#1c1c1e",text:"#f5f5f7",accent:"#2997ff",secondary:"#86868b",hover:"#2a2a2c"}}}}}</script>
-    <style>:root{--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom)}@supports (padding-top:env(safe-area-inset-top)){body{padding-top:var(--safe-top);padding-bottom:var(--safe-bottom)}}html{scroll-behavior:smooth}body{font-family:'SF Pro Display',-apple-system,system-ui,sans-serif;background:#000;-webkit-font-smoothing:antialiased;min-height:100vh}@media (prefers-color-scheme:dark){body{background:#000}.gl{background:rgba(28,28,30,.85)}}@media (min-width:2560px){.container-2xl{max-width:2000px}}@media (min-width:3840px){.container-2xl{max-width:2400px}}.gl{background:rgba(28,28,30,.75);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.05);border-radius:32px}.cd{transition:all .4s cubic-bezier(.4,0,.2,1)}.cd:hover{box-shadow:0 0 20px rgba(41,151,255,.15);border:1px solid rgba(41,151,255,.2)}.cd i{transition:all .3s ease}.cd:hover i{color:#fff}.bt{background:rgba(255,255,255,.04);transition:all .3s cubic-bezier(.4,0,.2,1);border-radius:20px;border:1px solid rgba(255,255,255,.1)}.bt:hover{background:rgba(41,151,255,.1);border-color:rgba(41,151,255,.3);box-shadow:0 0 15px rgba(41,151,255,.1)}section{animation:slideUp 1s ease-out forwards}@media (max-width:280px){.text-adjust{font-size:.875rem}.icon-adjust{font-size:1.5rem}}@media (display-mode:standalone){.nav-standalone{padding-top:max(var(--safe-top),1rem)}}@media (max-width:640px){.gl{border-radius:24px}}</style>
+    <script>
+    tailwind.config={
+      theme:{
+        extend:{
+          colors:{
+            ap:{
+              bg:{
+                dark:"#000000",
+                light:"#f8f7ff"
+              },
+              card:{
+                dark:"#1c1c1e",
+                light:"#ffffff"
+              },
+              text:{
+                dark:"#f5f5f7",
+                light:"#2d2d35"
+              },
+              accent:"#2997ff",
+              secondary:{
+                dark:"#86868b",
+                light:"#4a4a57"
+              },
+              hover:{
+                dark:"#2a2a2c",
+                light:"#eeedf7"
+              }
+            }
+          }
+        }
+      }
+    }
+    </script>
+    <style>
+    :root{
+      --safe-top:env(safe-area-inset-top);
+      --safe-bottom:env(safe-area-inset-bottom);
+      color-scheme: light dark;
+    }
+    @supports (padding-top:env(safe-area-inset-top)){
+      body{
+        padding-top:var(--safe-top);
+        padding-bottom:var(--safe-bottom)
+      }
+    }
+    html{
+      scroll-behavior:smooth
+    }
+    body{
+      font-family:'SF Pro Display',-apple-system,system-ui,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+      transition: background-color 0.3s ease;
+    }
+    body.light-mode {
+      background: #f8f7ff;
+      color: #2d2d35;
+    }
+    body.dark-mode {
+      background: #000;
+      color: #f5f5f7;
+    }
+    .gl{
+      transition: all 0.3s ease;
+    }
+    body.light-mode .gl {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(108, 99, 255, 0.1);
+    }
+    body.dark-mode .gl {
+      background: rgba(28, 28, 30, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    @media (min-width:2560px){
+      .container-2xl{
+        max-width:2000px
+      }
+    }
+    @media (min-width:3840px){
+      .container-2xl{
+        max-width:2400px
+      }
+    }
+    .gl{
+      backdrop-filter:blur(25px);
+      -webkit-backdrop-filter:blur(25px);
+      border-radius:32px
+    }
+    .cd{
+      transition:all .4s cubic-bezier(.4,0,.2,1)
+    }
+    body.light-mode .cd:hover {
+      box-shadow: 0 0 20px rgba(108, 99, 255, 0.15);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      background: rgba(255, 255, 255, 0.95);
+    }
+    body.dark-mode .cd:hover {
+      box-shadow: 0 0 20px rgba(41,151,255,.15);
+      border: 1px solid rgba(41,151,255,.2);
+    }
+    .cd i{
+      transition:all .3s ease
+    }
+    body.light-mode .cd i {
+      color: #6c63ff;
+    }
+    body.dark-mode .cd i {
+      color: #2997ff;
+    }
+    .cd:hover i{
+      transform: scale(1.1);
+    }
+    .bt{
+      transition:all .3s cubic-bezier(.4,0,.2,1);
+      border-radius:20px;
+    }
+    body.light-mode .bt {
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      color: #2d2d35;
+    }
+    body.dark-mode .bt {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    body.light-mode .bt:hover {
+      background: rgba(108, 99, 255, 0.12);
+      border-color: rgba(108, 99, 255, 0.3);
+      box-shadow: 0 0 15px rgba(108, 99, 255, 0.12);
+    }
+    body.dark-mode .bt:hover {
+      background: rgba(41,151,255,.1);
+      border-color: rgba(41,151,255,.3);
+      box-shadow: 0 0 15px rgba(41,151,255,.1);
+    }
+    section{
+      animation:slideUp 1s ease-out forwards
+    }
+    @media (max-width:280px){
+      .text-adjust{
+        font-size:.875rem
+      }
+      .icon-adjust{
+        font-size:1.5rem
+      }
+    }
+    @media (display-mode:standalone){
+      .nav-standalone{
+        padding-top:max(var(--safe-top),1rem)
+      }
+    }
+    @media (max-width:640px){
+      .gl{
+        border-radius:24px
+      }
+    }
+    #theme-toggle {
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+    </style>
   </head>
-  <body class="text-ap-text overflow-x-hidden">
+  <body class="dark-mode">
     <nav class="fixed top-4 left-1/2 -translate-x-1/2 gl z-40 w-[95%] max-w-4xl nav-standalone">
       <div class="px-6 py-4 flex justify-between items-center">
         <a href="#top" class="text-xl font-semibold hover:text-ap-accent transition-all duration-300" id="nav-name">oncemiri</a>
-        <div class="space-x-4"><a href="#projects" class="bt px-4 py-2 text-sm">Projects</a><a href="#links" class="bt px-4 py-2 text-sm">Links</a></div>
+        <div class="space-x-4">
+          <a href="#projects" class="bt px-4 py-2 text-sm">Projects</a>
+          <a href="#links" class="bt px-4 py-2 text-sm">Links</a>
+          <button id="theme-toggle" class="bt px-4 py-2 text-sm">
+            <i class="fas fa-sun hidden light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+          </button>
+        </div>
       </div>
     </nav>
     <header id="top" class="pt-32 min-h-screen flex flex-col justify-center px-6">
       <div class="max-w-4xl mx-auto w-full">
         <h1 class="text-6xl sm:text-8xl font-bold mb-4 tracking-tight" id="main-name">Miri</h1>
-        <p class="text-2xl sm:text-3xl mb-8 text-ap-secondary font-light">Full Stack Developer</p>
+        <p class="text-2xl sm:text-3xl mb-8 text-ap-secondary-dark dark:text-ap-secondary-light font-light">Full Stack Developer</p>
         <a href="https://status.oncemiri.net" class="inline-flex items-center gap-2 bg-ap-accent text-black font-medium px-6 py-3 rounded-full transition-all hover:brightness-110"><i class="fas fa-server"></i>Service Status</a>
       </div>
     </header>
@@ -32,19 +198,19 @@
         <h2 class="text-3xl font-semibold mb-12">Links</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <a href="https://discord.com/users/1266530258522345574" class="cd gl p-8">
-            <i class="fab fa-discord text-3xl text-ap-accent mb-4"></i>
+            <i class="fab fa-discord text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">Discord Profile</h3>
-            <p class="text-ap-secondary text-sm">Discord User</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Discord User</p>
           </a>
           <a href="https://discord.gg/ggmZNqafKr" class="cd gl p-8">
-            <i class="fas fa-users text-3xl text-ap-accent mb-4"></i>
+            <i class="fas fa-users text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">Discord Server</h3>
-            <p class="text-ap-secondary text-sm">Tech Talk</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Tech Talk</p>
           </a>
           <a href="https://youtube.com/@oncemiri" class="cd gl p-8">
-            <i class="fab fa-youtube text-3xl text-ap-accent mb-4"></i>
+            <i class="fab fa-youtube text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">YouTube Channel</h3>
-            <p class="text-ap-secondary text-sm">Rare uploads lol</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Rare uploads lol</p>
           </a>
         </div>
       </section>
@@ -52,28 +218,28 @@
         <h2 class="text-3xl font-semibold mb-12">Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <a href="https://sniped.oncemiri.net" class="cd gl p-8">
-            <i class="fas fa-play text-3xl text-ap-accent mb-4"></i>
+            <i class="fas fa-play text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">Sniped</h3>
-            <p class="text-ap-secondary text-sm">Alternative YouTube Frontend, currently private</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Alternative YouTube Frontend, currently private</p>
           </a>
           <a href="https://dis.oncemiri.net" class="cd gl p-8">
-            <i class="fas fa-image text-3xl text-ap-accent mb-4"></i>
+            <i class="fas fa-image text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">Dis</h3>
-            <p class="text-ap-secondary text-sm">Discord banner/PFP grabber web API in JS</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Discord banner/PFP grabber web API in JS</p>
           </a>
           <div class="cd gl p-8">
-            <i class="fas fa-robot text-3xl text-ap-accent mb-4"></i>
+            <i class="fas fa-robot text-3xl mb-4"></i>
             <h3 class="text-lg font-medium mb-2 text-adjust">Falcon</h3>
-            <p class="text-ap-secondary text-sm">Multipurpose Discord bot, currently WIP</p>
+            <p class="text-ap-secondary-dark dark:text-ap-secondary-light text-sm">Multipurpose Discord bot, currently WIP</p>
           </div>
         </div>
       </section>
     </main>
-    <footer class="py-12 px-6 text-center text-ap-secondary">
-      <p>© 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net</p>
+    <footer class="py-12 px-6 text-center text-ap-secondary-dark dark:text-ap-secondary-light">
+      <p>© 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net | v0.4-alpha</p>
     </footer>
     <script>
-    const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)});const mainName=document.getElementById("main-name");let hue=0;function updateMainNameGradient(){const e=`hsl(${hue},100%,70%)`,t=`hsl(${(hue+60)%360},100%,70%)`,n=`hsl(${(hue+120)%360},100%,70%)`;mainName.style.background=`linear-gradient(to right, ${e}, ${t}, ${n})`,mainName.style.webkitBackgroundClip="text",mainName.style.backgroundClip="text",mainName.style.color="transparent",hue=(hue+1)%360}setInterval(updateMainNameGradient,50);const navName=document.getElementById("nav-name");navName.style.background="linear-gradient(135deg, #6366f1, #2563eb)",navName.style.webkitBackgroundClip="text",navName.style.backgroundClip="text",navName.style.color="transparent"
+    const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)});const mainName=document.getElementById("main-name");let hue=0;function updateMainNameGradient(){const e=`hsl(${hue},100%,70%)`,t=`hsl(${(hue+60)%360},100%,70%)`,n=`hsl(${(hue+120)%360},100%,70%)`;mainName.style.background=`linear-gradient(to right, ${e}, ${t}, ${n})`,mainName.style.webkitBackgroundClip="text",mainName.style.backgroundClip="text",mainName.style.color="transparent",hue=(hue+1)%360}setInterval(updateMainNameGradient,50);const navName=document.getElementById("nav-name");navName.style.background="linear-gradient(135deg, #6366f1, #2563eb)",navName.style.webkitBackgroundClip="text",navName.style.backgroundClip="text",navName.style.color="transparent";const themeToggle=document.getElementById("theme-toggle"),lightIcon=document.querySelector(".light-icon"),darkIcon=document.querySelector(".dark-icon");function setTheme(e){"light"===e?(document.body.classList.remove("dark-mode"),document.body.classList.add("light-mode"),lightIcon.classList.add("hidden"),darkIcon.classList.remove("hidden"),localStorage.setItem("theme","light")):(document.body.classList.remove("light-mode"),document.body.classList.add("dark-mode"),lightIcon.classList.remove("hidden"),darkIcon.classList.add("hidden"),localStorage.setItem("theme","dark"))}themeToggle.addEventListener("click",()=>{setTheme(document.body.classList.contains("light-mode")?"dark":"light")});const savedTheme=localStorage.getItem("theme")||"dark";setTheme(savedTheme);
     </script>
   </body>
 </html>
