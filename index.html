@@ -1,1 +1,79 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Miri - Full Stack Dev"><title>Miri</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script>tailwind.config={theme:{extend:{colors:{ap:{bg:"#000000",card:"#1c1c1e",text:"#f5f5f7",accent:"#2997ff",secondary:"#86868b",hover:"#2a2a2c"}}}}}</script><style>:root{--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom)}@supports (padding-top:env(safe-area-inset-top)){body{padding-top:var(--safe-top);padding-bottom:var(--safe-bottom)}}html{scroll-behavior:smooth}body{font-family:'SF Pro Display',-apple-system,system-ui,sans-serif;background:#000;-webkit-font-smoothing:antialiased;min-height:100vh}@media (prefers-color-scheme:dark){body{background:#000}.gl{background:rgba(28,28,30,.85)}}@media (min-width:2560px){.container-2xl{max-width:2000px}}@media (min-width:3840px){.container-2xl{max-width:2400px}}.gl{background:rgba(28,28,30,.75);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.05);border-radius:32px}@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}.cd{transition:all .4s cubic-bezier(.4,0,.2,1)}.cd:hover{box-shadow:0 0 20px rgba(41,151,255,.15);border:1px solid rgba(41,151,255,.2)}.cd i{transition:all .3s ease}.cd:hover i{color:#fff}.bt{background:rgba(255,255,255,.04);transition:all .3s cubic-bezier(.4,0,.2,1);border-radius:20px;border:1px solid rgba(255,255,255,.1)}.bt:hover{background:rgba(41,151,255,.1);border-color:rgba(41,151,255,.3);box-shadow:0 0 15px rgba(41,151,255,.1)}section{animation:slideUp 1s ease-out forwards;opacity:0}@media (max-width:280px){.text-adjust{font-size:.875rem}.icon-adjust{font-size:1.5rem}}@media (display-mode:standalone){.nav-standalone{padding-top:max(var(--safe-top),1rem)}}@media (max-width:640px){.gl{border-radius:24px}}</style></head><body class="text-ap-text overflow-x-hidden"><nav class="fixed top-4 left-1/2 -translate-x-1/2 gl z-40 w-[95%] max-w-4xl nav-standalone"><div class="px-6 py-4 flex justify-between items-center"><a href="#top" class="text-xl font-semibold hover:text-ap-accent transition-all duration-300">miri</a><div class="space-x-4"><a href="#projects" class="bt px-4 py-2 text-sm">Projects</a><a href="#links" class="bt px-4 py-2 text-sm">Links</a></div></div></nav><header id="top" class="pt-32 min-h-screen flex flex-col justify-center px-6"><div class="max-w-4xl mx-auto w-full"><h1 class="text-6xl sm:text-8xl font-bold mb-4 tracking-tight animate-[slideUp_1s_ease-out]">Miri</h1><p class="text-2xl sm:text-3xl mb-8 text-ap-secondary font-light animate-[slideUp_1s_ease-out_0.2s] opacity-0 transform" style="animation-fill-mode:forwards">Full Stack Developer</p><a href="https://status.oncemiri.net" class="inline-flex items-center gap-2 bg-ap-accent text-black font-medium px-6 py-3 rounded-full transition-all hover:brightness-110"><i class="fas fa-server"></i>Service Status</a></div></header><main class="max-w-4xl mx-auto px-6 py-24 space-y-32 container-2xl"><section id="links" class="scroll-mt-24"><h2 class="text-3xl font-semibold mb-12">Links</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><a href="https://discord.com/users/1266530258522345574" class="cd gl p-8"><i class="fab fa-discord text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">Discord Profile</h3><p class="text-ap-secondary text-sm">Discord User</p></a><a href="https://discord.gg/ggmZNqafKr" class="cd gl p-8"><i class="fas fa-users text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">Discord Server</h3><p class="text-ap-secondary text-sm">Tech Talk</p></a><a href="https://youtube.com/@oncemiri" class="cd gl p-8"><i class="fab fa-youtube text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">YouTube Channel</h3><p class="text-ap-secondary text-sm">Rare uploads lol</p></a></div></section><section id="projects" class="scroll-mt-24"><h2 class="text-3xl font-semibold mb-12">Projects</h2><div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><a href="https://piped.oncemiri.net" class="cd gl p-8"><i class="fas fa-play text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">Piped</h3><p class="text-ap-secondary text-sm">Alternative YouTube Frontend</p></a><a href="https://dis.oncemiri.net" class="cd gl p-8"><i class="fas fa-image text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">Dis</h3><p class="text-ap-secondary text-sm">Discord banner/PFP grabber web API</p></a><div class="cd gl p-8"><i class="fas fa-robot text-3xl text-ap-accent mb-4"></i><h3 class="text-lg font-medium mb-2 text-adjust">Falcon</h3><p class="text-ap-secondary text-sm">Multipurpose Discord bot</p></div></div></section></main><footer class="py-12 px-6 text-center text-ap-secondary"><p>© 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net</p></footer><script>const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)})</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Miri - Full Stack Dev">
+    <title>Miri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>tailwind.config={theme:{extend:{colors:{ap:{bg:"#000000",card:"#1c1c1e",text:"#f5f5f7",accent:"#2997ff",secondary:"#86868b",hover:"#2a2a2c"}}}}}</script>
+    <style>:root{--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom)}@supports (padding-top:env(safe-area-inset-top)){body{padding-top:var(--safe-top);padding-bottom:var(--safe-bottom)}}html{scroll-behavior:smooth}body{font-family:'SF Pro Display',-apple-system,system-ui,sans-serif;background:#000;-webkit-font-smoothing:antialiased;min-height:100vh}@media (prefers-color-scheme:dark){body{background:#000}.gl{background:rgba(28,28,30,.85)}}@media (min-width:2560px){.container-2xl{max-width:2000px}}@media (min-width:3840px){.container-2xl{max-width:2400px}}.gl{background:rgba(28,28,30,.75);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.05);border-radius:32px}.cd{transition:all .4s cubic-bezier(.4,0,.2,1)}.cd:hover{box-shadow:0 0 20px rgba(41,151,255,.15);border:1px solid rgba(41,151,255,.2)}.cd i{transition:all .3s ease}.cd:hover i{color:#fff}.bt{background:rgba(255,255,255,.04);transition:all .3s cubic-bezier(.4,0,.2,1);border-radius:20px;border:1px solid rgba(255,255,255,.1)}.bt:hover{background:rgba(41,151,255,.1);border-color:rgba(41,151,255,.3);box-shadow:0 0 15px rgba(41,151,255,.1)}section{animation:slideUp 1s ease-out forwards}@media (max-width:280px){.text-adjust{font-size:.875rem}.icon-adjust{font-size:1.5rem}}@media (display-mode:standalone){.nav-standalone{padding-top:max(var(--safe-top),1rem)}}@media (max-width:640px){.gl{border-radius:24px}}</style>
+  </head>
+  <body class="text-ap-text overflow-x-hidden">
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 gl z-40 w-[95%] max-w-4xl nav-standalone">
+      <div class="px-6 py-4 flex justify-between items-center">
+        <a href="#top" class="text-xl font-semibold hover:text-ap-accent transition-all duration-300">miri</a>
+        <div class="space-x-4"><a href="#projects" class="bt px-4 py-2 text-sm">Projects</a><a href="#links" class="bt px-4 py-2 text-sm">Links</a></div>
+      </div>
+    </nav>
+    <header id="top" class="pt-32 min-h-screen flex flex-col justify-center px-6">
+      <div class="max-w-4xl mx-auto w-full">
+        <h1 class="text-6xl sm:text-8xl font-bold mb-4 tracking-tight">Miri</h1>
+        <p class="text-2xl sm:text-3xl mb-8 text-ap-secondary font-light">Full Stack Developer</p>
+        <a href="https://status.oncemiri.net" class="inline-flex items-center gap-2 bg-ap-accent text-black font-medium px-6 py-3 rounded-full transition-all hover:brightness-110"><i class="fas fa-server"></i>Service Status</a>
+      </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-6 py-24 space-y-32 container-2xl">
+      <section id="links" class="scroll-mt-24">
+        <h2 class="text-3xl font-semibold mb-12">Links</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="https://discord.com/users/1266530258522345574" class="cd gl p-8">
+            <i class="fab fa-discord text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">Discord Profile</h3>
+            <p class="text-ap-secondary text-sm">Discord User</p>
+          </a>
+          <a href="https://discord.gg/ggmZNqafKr" class="cd gl p-8">
+            <i class="fas fa-users text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">Discord Server</h3>
+            <p class="text-ap-secondary text-sm">Tech Talk</p>
+          </a>
+          <a href="https://youtube.com/@oncemiri" class="cd gl p-8">
+            <i class="fab fa-youtube text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">YouTube Channel</h3>
+            <p class="text-ap-secondary text-sm">Rare uploads lol</p>
+          </a>
+        </div>
+      </section>
+      <section id="projects" class="scroll-mt-24">
+        <h2 class="text-3xl font-semibold mb-12">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <a href="https://piped.oncemiri.net" class="cd gl p-8">
+            <i class="fas fa-play text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">Piped</h3>
+            <p class="text-ap-secondary text-sm">Alternative YouTube Frontend</p>
+          </a>
+          <a href="https://dis.oncemiri.net" class="cd gl p-8">
+            <i class="fas fa-image text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">Dis</h3>
+            <p class="text-ap-secondary text-sm">Discord banner/PFP grabber web API</p>
+          </a>
+          <div class="cd gl p-8">
+            <i class="fas fa-robot text-3xl text-ap-accent mb-4"></i>
+            <h3 class="text-lg font-medium mb-2 text-adjust">Falcon</h3>
+            <p class="text-ap-secondary text-sm">Multipurpose Discord bot</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="py-12 px-6 text-center text-ap-secondary">
+      <p>
+        © 2024-<script>document.write(new Date().getFullYear())</script> oncemiri.net
+      </p>
+    </footer>
+    <script>const watchOS=/Watch/.test(navigator.platform);watchOS&&(document.body.classList.add("watch"),document.querySelectorAll(".text-adjust").forEach(e=>e.style.fontSize="0.75rem"),document.querySelectorAll(".icon-adjust").forEach(e=>e.style.fontSize="1.25rem"));const sections=document.querySelectorAll("section"),observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)")})},{threshold:.1,rootMargin:"0px 0px -10% 0px"});sections.forEach(e=>{observer.observe(e)})</script>
+  </body>
+</html>
